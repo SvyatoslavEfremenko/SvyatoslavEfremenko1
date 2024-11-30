@@ -7,7 +7,6 @@ public enum TypeUnit {
     Flang;
 
 
-    // Метод определения вероятности нанесения критического урона
     public static double getProbability(TypeUnit typeOfUnit){
         double returnValue = 0.0;
         switch (typeOfUnit){
@@ -20,7 +19,6 @@ public enum TypeUnit {
     }
 
 
-    // Метод определения критического урона
     public static int additionalDamage(GameUnit unit){
         int returnValue = 0;
         switch (unit.getType()){
@@ -32,7 +30,6 @@ public enum TypeUnit {
     }
 
 
-    // Метод определения роли
     public static TypeUnit defenitionOfType(String typeOfUnit) {
         TypeUnit returnValue = TypeUnit.Healer;
         switch (typeOfUnit.toLowerCase()){
@@ -44,7 +41,6 @@ public enum TypeUnit {
     }
 
 
-    // Метод восстановления очков здоровья у персонажей типа "Healer" на 20
     public static void heal(GameUnit unit){
         if (unit.getType() == TypeUnit.Healer){
             unit.setHealPoints(unit.getHealPoints() + 50);

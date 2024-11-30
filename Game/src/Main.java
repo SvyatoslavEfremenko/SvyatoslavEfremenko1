@@ -1,15 +1,11 @@
-// Импортирование необходимых библиотек
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.lang.String;
 import java.util.Random;
 
 
-// Создание класса Main
 public class Main{
 
 
-    // Метод проведения дуэли
     public static GameUnit battle(GameUnit unit1, GameUnit unit2){
         if (unit1.getClass() == unit2.getClass()){
             System.out.printf("Они оба из одной и той же семьи... " +
@@ -38,17 +34,6 @@ public class Main{
     }
 
 
-    // Метод main. Именно здесь и запускается программа от Вашего лица. Чтобы проверить мой проект, уберите "\*" и "*/",
-    // а затем заполните параметры всех GameUnit'ов по следующему шаблону:
-    // 1 - "fire", "water", "wind" или "ground". Это определит, к какому классу будет принадлежать GameUnit.
-    // 2 - Любое имя.
-    // 3 - Показатель силы. Любое положительное целое число.
-    // 4 - Показатель очков здоровья. Любое положительное целое число.
-    // 5 - Показатель веса. Любое положительное целое число.
-    // 6 - Показатель роста. Любое положительное целое число.
-    // 7 - TypeUnit.Healer, TypeUnit.Tank, TypeUnit.Flang, или TypeUnit.DamageDealer; это определит тип GameUnit'а
-    // Ниже я "заполнил" всех GameUnit'ов, чтобы Вам было более понятно, что я имел в виду. Надеюсь, вам понравится. :D
-    // (К слову, выздоравливайте. :D)
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         GameUnit unit1 = GameUnit.createAUnit("fire", "Bob", 30, 1000, 60, 150, TypeUnit.Healer);

@@ -1,17 +1,8 @@
-// Импорт необходимых для работы программы библиотек
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 import java.lang.String;
 public class GameUnit {
 
 
-    // Создание Scanner-объекта
-    Scanner in = new Scanner(System.in);
-
-
-    // Поля класса
     private String name;
     private int strength;
     private int healPoints;
@@ -20,7 +11,6 @@ public class GameUnit {
     private TypeUnit type;
 
 
-    // Геттер и сеттер имени
     public void setName(String name){
         this.name = name;
     }
@@ -29,7 +19,6 @@ public class GameUnit {
     }
 
 
-    // Геттер и сеттер силы
     public void setStrength(int strength){
         this.strength = strength;
     }
@@ -38,7 +27,6 @@ public class GameUnit {
     }
 
 
-    // Геттер и сеттер уровня здоровья
     public void setHealPoints(int healPoints){
         this.healPoints = healPoints;
     }
@@ -47,7 +35,6 @@ public class GameUnit {
     }
 
 
-    // Геттер и сеттер веса
     public void setWeight(int weight){
         this.weight = weight;
     }
@@ -56,7 +43,6 @@ public class GameUnit {
     }
 
 
-    // Геттер и сеттер роста
     public void setHeight(int height){
         this.height = height;
     }
@@ -65,7 +51,6 @@ public class GameUnit {
     }
 
 
-    // Геттер и сеттер типа
     public void setType(String type){
         this.type = TypeUnit.defenitionOfType(type);
     }
@@ -74,7 +59,6 @@ public class GameUnit {
     }
 
 
-    // Конструктор класса
     public GameUnit(String name, int strength, int healPoints, int weight, int height, TypeUnit type){
         this.name = name;
         this.strength = strength;
@@ -88,7 +72,6 @@ public class GameUnit {
     }
 
 
-    // Метод определения урона (unit1 наносит урон по персонажу unit2)
     public static int attack(GameUnit unit1, GameUnit unit2){
         Random random = new Random();
         double percentage = random.nextDouble();
@@ -129,7 +112,6 @@ public class GameUnit {
     }
 
 
-    // Метод нанесения урона (unit1 наносит урон по персонажу unit2)
     public void looseHealPoints(int attack, GameUnit unit1, GameUnit unit2){
         int looseHealPointsValue = unit2.getHealPoints() - attack;
         if (unit1.getType() == TypeUnit.Flang && unit2.getType() == TypeUnit.Healer){
@@ -142,7 +124,6 @@ public class GameUnit {
     }
 
 
-    // Метод создания персонажа
     public static GameUnit createAUnit(String familyOfUnit, String name,
                                 int strength, int healPoints, int weight, int height, TypeUnit type){
         GameUnit returnValue;
@@ -158,7 +139,6 @@ public class GameUnit {
     }
 
 
-    //Метод произнесения фразы
     public void sayPhrase(GameUnit unit1, GameUnit unit2){
         Random random = new Random();
         String[] listOfPhrases = {"Тебе не победить!",
